@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+  color: white;
+  background-color: rgb(82, 82, 82);
+  padding: 2px 5px;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.header h1 {
+  font-size: 16px;
+}
+
+.header-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-close {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: default;
+}
+
+.content {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-content {
+  border-radius: 5px;
+  margin-top: 1rem;
+  width: 700px;
+  height: 400px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: rgb(40, 40, 40);
+}
+
+.input-content {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  pointer-events: none;
+}
+
+.input-icon::before,
+.input-icon::after {
+  position: absolute;
+  content: "";
+  height: 0.2em;
+  width: 10px;
+  background-color: white;
+}
+
+.input-icon::before {
+  transform: rotate(30deg);
+  left: 10px;
+}
+
+.input-icon::after {
+  transform: rotate(-30deg);
+  left: 17px;
+}
+
+.input {
+  color: white;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+
+  background-color: transparent;
+  padding: 20px 40px;
+  font-size: 20px;
+  /* font-style: italic; */
+}
+
+.input:focus,
+.input:active {
+  outline: none;
+}
+
+.input-icon {
+  position: absolute;
+  inset: 0;
+  transition: all 0.3s;
+}
+
+.input:focus + .input-icon::before {
+  transform: rotate(180deg);
+}
+
+.todo-tasks {
+  padding: 0px 15px;
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+  overflow: auto;
+  max-height: 300px;
+  /* height: 300px; */
+}
+
+.todo-tasks-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  left: 0px;
+  top: 23px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 10%
+  );
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  /* background: rgba(149, 157, 165, 0.2); */
+  /* margin-block-end: 0.5em; */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(124, 125, 125, 0.5);
+  border-radius: 10px;
+}
+
+ul,
+li {
+  list-style: none;
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.task-list-element {
+  border-bottom: rgba(231, 231, 231, 0.3) 1px solid;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.element-col-1 {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.element-user,
+.element-date {
+  white-space: nowrap;
+}
+
+.element-user {
+  font-weight: 500;
+  color: #d9e182;
+}
+
+.element-action {
+  cursor: pointer;
+  font-weight: 500;
+  color: red;
+}
